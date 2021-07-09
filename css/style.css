@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Mulish", sans-serif;
+}
+
+/* spainner animation  */
+
+.spinner span {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.spinner svg {
+  height: 12vh;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+circle:nth-of-type(2) {
+  animation: spin 3s linear infinite;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transform-origin: 50% 50%;
+  transform: rotate(-0.25turn);
+}
+
+@keyframes spin {
+  0% {
+    stroke-dashoffset: 1;
+    transform: rotate(-0.25turn);
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -1;
+    transform: rotate(0.75turn);
+  }
+}
+
+/* index hmlt 2 */
+
+.hire-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(138, 138, 236, 0.685);
+}
+
+.hire-container h1 {
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.hire-container #project-flex {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hire-container #project-flex .projects {
+  width: 30%;
+  height: 60vh;
+  position: relative;
+}
+
+.hire-container #project-flex .projects img {
+  width: 100%;
+  opacity: 0.7;
+  transition: all 400ms ease-in-out;
+}
+
+.hire-container #project-flex .projects .live a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--default-col);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+  display: none;
+}
+
+.hire-container #project-flex .projects .live a:hover {
+  opacity: 0.9;
+}
+
+.hire-container #project-flex .projects img:hover {
+  opacity: 1;
+}
